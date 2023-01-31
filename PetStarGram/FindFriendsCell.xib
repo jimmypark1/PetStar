@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="FindFriendsCell" id="YYt-LH-LFv" customClass="FindFriendsCell" customModule="PetStarGram" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="50"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
+                <rect key="frame" x="0.0" y="0.0" width="375" height="50"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="QEq-Qx-yAh">
+                        <rect key="frame" x="20" y="7" width="36" height="36"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="36" id="wjK-Y8-zrT"/>
+                            <constraint firstAttribute="height" constant="36" id="ysq-s1-aeJ"/>
+                        </constraints>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                <integer key="value" value="18"/>
+                            </userDefinedRuntimeAttribute>
+                        </userDefinedRuntimeAttributes>
+                    </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rEI-0C-GCm">
+                        <rect key="frame" x="79" y="15" width="187" height="21"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="21" id="d2Q-6C-7oE"/>
+                            <constraint firstAttribute="width" constant="187" id="gc5-F9-heu"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="13"/>
+                        <color key="textColor" red="0.0078431372550000003" green="0.53333333329999999" blue="0.81960784310000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hf2-90-2aM">
+                        <rect key="frame" x="324" y="14" width="24" height="23"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="23" id="Zwh-DQ-Zn7"/>
+                            <constraint firstAttribute="width" constant="24" id="eeV-ft-8ss"/>
+                        </constraints>
+                        <state key="normal" image="add_user"/>
+                        <connections>
+                            <action selector="followButtonTapped:" destination="YYt-LH-LFv" eventType="touchUpInside" id="I0O-MI-z0P"/>
+                        </connections>
+                    </button>
+                </subviews>
+            </view>
+            <viewLayoutGuide key="safeArea" id="dSP-dz-lzH"/>
+            <constraints>
+                <constraint firstAttribute="bottom" secondItem="hf2-90-2aM" secondAttribute="bottom" constant="13" id="1mx-Xc-xX5"/>
+                <constraint firstItem="rEI-0C-GCm" firstAttribute="top" secondItem="YYt-LH-LFv" secondAttribute="top" constant="15" id="Dg8-S0-5aZ"/>
+                <constraint firstItem="QEq-Qx-yAh" firstAttribute="top" secondItem="YYt-LH-LFv" secondAttribute="top" constant="7" id="EJo-3C-yfL"/>
+                <constraint firstAttribute="bottom" secondItem="QEq-Qx-yAh" secondAttribute="bottom" constant="7" id="Fyr-q3-pXY"/>
+                <constraint firstAttribute="trailing" secondItem="hf2-90-2aM" secondAttribute="trailing" constant="27" id="Gsk-1a-aCg"/>
+                <constraint firstAttribute="bottom" secondItem="rEI-0C-GCm" secondAttribute="bottom" constant="14" id="Ptv-yq-LZo"/>
+                <constraint firstItem="hf2-90-2aM" firstAttribute="top" secondItem="YYt-LH-LFv" secondAttribute="top" constant="14" id="eC9-Sn-Zj5"/>
+                <constraint firstItem="rEI-0C-GCm" firstAttribute="leading" secondItem="QEq-Qx-yAh" secondAttribute="trailing" constant="23" id="eQa-wV-80B"/>
+                <constraint firstItem="QEq-Qx-yAh" firstAttribute="leading" secondItem="YYt-LH-LFv" secondAttribute="leading" constant="20" id="pFv-I4-hec"/>
+            </constraints>
+            <connections>
+                <outlet property="followButton" destination="hf2-90-2aM" id="dRR-AT-N9O"/>
+                <outlet property="profile" destination="QEq-Qx-yAh" id="s7O-MY-BIp"/>
+                <outlet property="usernameLabel" destination="rEI-0C-GCm" id="zqt-G1-uwb"/>
+            </connections>
+            <point key="canvasLocation" x="138" y="148"/>
+        </collectionViewCell>
+    </objects>
+    <resources>
+        <image name="add_user" width="36" height="34"/>
+    </resources>
+</document>

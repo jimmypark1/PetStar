@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BTE-Zs-vmV">
+    <device id="retina4_7" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Intro View Controller-->
+        <scene sceneID="Vac-eC-6D4">
+            <objects>
+                <viewController id="BTE-Zs-vmV" customClass="IntroViewController" customModule="PetStarGram" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="vKN-zD-yJz">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="fig1" translatesAutoresizingMaskIntoConstraints="NO" id="gbI-Dv-xAt">
+                                <rect key="frame" x="0.0" y="65.5" width="375" height="462"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="375" id="JNE-2q-Mfa"/>
+                                    <constraint firstAttribute="height" constant="462" id="pC8-o0-fXn"/>
+                                </constraints>
+                            </imageView>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="center" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="S1I-Ul-hqM">
+                                <rect key="frame" x="30" y="534" width="315" height="60"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="60" id="WMD-Uk-h9R"/>
+                                </constraints>
+                                <string key="text">Take and share your lovely pet
+Friends wait</string>
+                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="13"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="0WX-ja-aHg"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="S1I-Ul-hqM" firstAttribute="leading" secondItem="0WX-ja-aHg" secondAttribute="leading" constant="30" id="52T-IH-qkp"/>
+                            <constraint firstItem="S1I-Ul-hqM" firstAttribute="top" secondItem="gbI-Dv-xAt" secondAttribute="bottom" constant="6.5" id="KfM-mF-LQM"/>
+                            <constraint firstItem="S1I-Ul-hqM" firstAttribute="centerX" secondItem="0WX-ja-aHg" secondAttribute="centerX" id="OMl-Bd-21B"/>
+                            <constraint firstItem="S1I-Ul-hqM" firstAttribute="top" secondItem="gbI-Dv-xAt" secondAttribute="bottom" constant="6.5" id="aji-bj-pF9"/>
+                            <constraint firstItem="gbI-Dv-xAt" firstAttribute="leading" secondItem="0WX-ja-aHg" secondAttribute="leading" id="lVY-1B-PI6"/>
+                            <constraint firstItem="gbI-Dv-xAt" firstAttribute="top" secondItem="0WX-ja-aHg" secondAttribute="top" constant="65.5" id="quY-q0-2hi"/>
+                            <constraint firstItem="gbI-Dv-xAt" firstAttribute="trailing" secondItem="0WX-ja-aHg" secondAttribute="trailing" id="uNV-7s-Nac"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="descView" destination="S1I-Ul-hqM" id="tQH-7R-qCV"/>
+                        <outlet property="imgHeight" destination="pC8-o0-fXn" id="FLY-tC-Dc7"/>
+                        <outlet property="imgTop" destination="quY-q0-2hi" id="D5F-vd-iwY"/>
+                        <outlet property="imgView" destination="gbI-Dv-xAt" id="9kc-d1-mwx"/>
+                        <outlet property="imgWidth" destination="JNE-2q-Mfa" id="e9T-xw-vpR"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="7Ls-Hw-L1Z" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="168.80000000000001" y="146.17691154422789"/>
+        </scene>
+        <!--Filter Show View Controller-->
+        <scene sceneID="tkC-WN-Dem">
+            <objects>
+                <viewController storyboardIdentifier="FilterSet" id="C7O-Si-LHf" customClass="FilterShowViewController" customModule="PetStarGram" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="XI0-Nf-DaO">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="intro" translatesAutoresizingMaskIntoConstraints="NO" id="AqP-ae-D0P">
+                                <rect key="frame" x="60.5" y="110" width="254" height="254"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="254" id="a1d-kv-ofv"/>
+                                    <constraint firstAttribute="width" constant="254" id="k69-o1-Ao2"/>
+                                </constraints>
+                            </imageView>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="K9x-Pq-3PQ">
+                                <rect key="frame" x="39" y="400" width="297" height="82"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="82" id="c8q-Pf-Q3W"/>
+                                </constraints>
+                                <string key="text">170 beautiful filters make your pet more lovable.
+PetStar is waiting for you</string>
+                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="13"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="dlf-It-TND"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="K9x-Pq-3PQ" firstAttribute="leading" secondItem="dlf-It-TND" secondAttribute="leading" constant="39" id="3oE-Zz-koc"/>
+                            <constraint firstItem="AqP-ae-D0P" firstAttribute="centerX" secondItem="dlf-It-TND" secondAttribute="centerX" id="BfH-Fn-0gO"/>
+                            <constraint firstItem="AqP-ae-D0P" firstAttribute="top" secondItem="dlf-It-TND" secondAttribute="top" constant="110" id="OMJ-L3-dg7"/>
+                            <constraint firstItem="dlf-It-TND" firstAttribute="trailing" secondItem="K9x-Pq-3PQ" secondAttribute="trailing" constant="39" id="Tkl-z2-lle"/>
+                            <constraint firstItem="K9x-Pq-3PQ" firstAttribute="top" secondItem="AqP-ae-D0P" secondAttribute="bottom" constant="36" id="oZU-sI-j2v"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="ivSlideshow" destination="AqP-ae-D0P" id="0t8-BX-Kox"/>
+                        <outlet property="top" destination="OMJ-L3-dg7" id="cQo-M0-TaK"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="pJJ-zM-Ufb" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="884" y="137.18140929535232"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="fig1" width="820" height="1589"/>
+        <image name="intro" width="515" height="500"/>
+    </resources>
+</document>
