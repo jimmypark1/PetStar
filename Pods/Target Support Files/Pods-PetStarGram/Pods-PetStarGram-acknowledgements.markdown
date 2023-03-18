@@ -614,10 +614,6 @@ CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
    limitations under the License.
 
 
-## FirebaseAnalytics
-
-Copyright 2022 Google
-
 ## FirebaseAppCheckInterop
 
 
@@ -4896,7 +4892,7 @@ Copyright 2022 Google
 
 ## GoogleUserMessagingPlatform
 
-Copyright 2021 Google
+Copyright 2022 Google
 
 ## GoogleUtilities
 

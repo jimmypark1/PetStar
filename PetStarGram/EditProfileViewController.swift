@@ -14,7 +14,7 @@ import FirebaseAuth
 import RSLoadingView
 
 class EditProfileViewController: UIViewController , UIImagePickerControllerDelegate, UINavigationControllerDelegate{
-
+    
     @IBOutlet weak var titleView:UIView!
     @IBOutlet weak var imgView:UIImageView!
     @IBOutlet weak var titleLabel:UILabel!
@@ -28,7 +28,7 @@ class EditProfileViewController: UIViewController , UIImagePickerControllerDeleg
     var image:UIImage!
     var post:JPost!
     var imagePicker = UIImagePickerController()
-
+    
     
     func initTopView()
     {
@@ -49,11 +49,11 @@ class EditProfileViewController: UIViewController , UIImagePickerControllerDeleg
             }
         }
         
-        titleHeight.constant =  titleHeight.constant + offset
-        closeTop.constant =  closeTop.constant + offset
-        titleTop.constant =  titleTop.constant + offset
-        saveTop.constant =  saveTop.constant + offset
-        
+//        titleHeight.constant =  titleHeight.constant + offset
+//        closeTop.constant =  closeTop.constant + offset
+//        titleTop.constant =  titleTop.constant + offset
+//        saveTop.constant =  saveTop.constant + offset
+//
         
         titleView.layer.shadowColor = UIColor.lightGray.cgColor
         titleView.layer.shadowOpacity = 1
@@ -64,6 +64,127 @@ class EditProfileViewController: UIViewController , UIImagePickerControllerDeleg
         titleLabel.textColor = UIColor.black//UIColor.init(red: 27.0/256.0, green: 147.0/256.0, blue: 216.0/256.0, alpha: 1.0)
         titleLabel.text = "EDIT PROFILE"
         
+    }
+    func showAlert(msg:String, title:String)  {
+             
+        let alert = UIAlertController(title: title,
+                                      message: msg,
+                                      preferredStyle: UIAlertController.Style.alert)
+
+
+        let okAction = UIAlertAction(title: "OK", style: .default, handler: { [ self] (action) -> Void in
+            
+
+        deleteAccount()
+
+         self.navigationController?.popViewController(animated: true)
+
+              })
+        let cancelAction = UIAlertAction(title: "Cancel", style: .default, handler: { [ self] (action) -> Void in
+               
+                 })
+
+        //okAction.isEnabled = false
+
+        alert.addAction(okAction)
+        alert.addAction(cancelAction)
+
+        self.present(alert, animated: true, completion: nil)
+         
+     }
+    func deleteAccount()
+    {
+        let user = Auth.auth().currentUser
+      
+    
+        do {
+            UserService.posts(for: JUser.current) { (posts) in
+                
+                if(posts.count > 0)
+                {
+                    let dispatchGroup = DispatchGroup()
+               
+                   
+                    
+                    for post in posts
+                    {
+                        dispatchGroup.enter()
+                     
+                        PostService.delete(post, completion:
+                            { (success) in
+                                
+                            
+                            dispatchGroup.leave()
+                       
+                                
+                        })
+                    }
+                    dispatchGroup.notify(queue: .main, execute: {
+                        try? Auth.auth().signOut()
+                        user?.delete { error in
+                          if let error = error {
+                            // An error happened.
+                              
+                          } else {
+                            // Account deleted.
+                              let storyboard = UIStoryboard(name: "Login", bundle: .main)
+                              let vc = storyboard.instantiateViewController(withIdentifier: "Login") as! LoginViewController
+                           
+                              let transition = CATransition()
+                              transition.duration = 0.3
+                              transition.type = CATransitionType(string: "fade") as String
+                              self.present(vc, animated: true, completion: nil)
+                            
+                          }
+                        }
+                    })
+                }
+                else
+                {
+                    try? Auth.auth().signOut()
+                    user?.delete { error in
+                      if let error = error {
+                        // An error happened.
+                          
+                      } else {
+                        // Account deleted.
+                          // Account deleted.
+                            let storyboard = UIStoryboard(name: "Login", bundle: .main)
+                            let vc = storyboard.instantiateViewController(withIdentifier: "Login") as! LoginViewController
+                         
+                            let transition = CATransition()
+                            transition.duration = 0.3
+                            transition.type = CATransitionType(string: "fade") as String
+                            self.present(vc, animated: true, completion: nil)
+                          
+
+                      }
+                    }
+                    
+                }
+              
+                
+             
+            }
+       
+           
+            //
+        } catch {
+        }
+       
+      
+        
+      
+        
+    }
+    @IBAction func Save()
+    {
+        saveProfile()
+    }
+    @IBAction func Deletion()
+    {
+        showAlert(msg: "If you cancel withdrawal members, uploaded content, and other activity data will all be deleted. Are you sure you want to withdrawal members?", title: "Withdrawal of Members")
+
     }
     override func viewDidLoad() {
         super.viewDidLoad()

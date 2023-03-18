@@ -40,10 +40,56 @@ class EditVideoViewController: UIViewController {
     @IBOutlet weak var topMoreConstraint: NSLayoutConstraint!
     @IBOutlet weak var topViewConstraint: NSLayoutConstraint!
     
-    
+  
     @IBOutlet var titleView:UIView!
     @IBOutlet var shareLabel:UILabel!
     
+    func setBannerView(){
+        let bAD:Bool = UserDefaults.standard.bool(forKey: "isADPurchased")
+     
+        let  appDelegate:AppDelegate = UIApplication.shared.delegate as! AppDelegate
+        
+        if( bAD == false && appDelegate.isSimulator == false )
+        {
+            
+            let  appDelegate:AppDelegate = UIApplication.shared.delegate as! AppDelegate
+            bannerView.adUnitID = "ca-app-pub-7915959670508279/9678938261"
+
+            bannerView.rootViewController = self
+            let request = GADRequest()
+            //  request.testDevices = @[ @"e65885a6f48dfc84c9ae2de2872759fd" ];
+            bannerView.load(request)
+
+        }
+        else
+        {
+           
+            bannerHeight.constant = 0
+        }
+        if( bAD == false && appDelegate.isSimulator == false)
+        {
+          
+            if(appDelegate.isServiceAD == false)
+            {
+                bannerView.adUnitID = "ca-app-pub-3940256099942544/2934735716"
+            }
+            else
+            {
+                bannerView.adUnitID = "ca-app-pub-7915959670508279/7299093024"
+            }
+            
+            bannerView.rootViewController = self
+            let request = GADRequest()
+            //  request.testDevices = @[ @"e65885a6f48dfc84c9ae2de2872759fd" ];
+            bannerView.load(request)
+
+        }
+        else
+        {
+            bannerHeight.constant = 0
+    
+        }
+    }
     func initTopView()
     {
         var offset:CGFloat = 0.0
@@ -62,9 +108,9 @@ class EditVideoViewController: UIViewController {
                 print("unknown")
             }
         }
-        topViewConstraint.constant = topViewConstraint.constant + offset
-        topPrevConstraint.constant = topPrevConstraint.constant + offset
-        topMoreConstraint.constant = topMoreConstraint.constant + offset
+//        topViewConstraint.constant = topViewConstraint.constant + offset
+//        topPrevConstraint.constant = topPrevConstraint.constant + offset
+//        topMoreConstraint.constant = topMoreConstraint.constant + offset
         
         titleView.layer.shadowColor = UIColor.lightGray.cgColor
         titleView.layer.shadowOpacity = 1
@@ -160,6 +206,7 @@ class EditVideoViewController: UIViewController {
     }
     override func viewWillAppear(_ animated: Bool) {
         JunSoftUtil.shared.isDetail = true
+        setBannerView()
   
     }
     override func viewDidLoad() {
@@ -177,8 +224,8 @@ class EditVideoViewController: UIViewController {
         let bAD:Bool = user.bool(forKey: "isADPurchased")
         if( bAD == false)
         {
-            
-            
+
+
             let  appDelegate:AppDelegate = UIApplication.shared.delegate as! AppDelegate
             if(appDelegate.isServiceAD == false)
             {
@@ -192,14 +239,15 @@ class EditVideoViewController: UIViewController {
             let request = GADRequest()
             //  request.testDevices = @[ @"e65885a6f48dfc84c9ae2de2872759fd" ];
             bannerView.load(request)
-            
+
         }
         else
         {
             bannerHeight.constant = 0
         }
+
         
-    }
+      }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()

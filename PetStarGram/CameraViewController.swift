@@ -19,6 +19,7 @@ import MBCircularProgressBar
 
 
 import NVActivityIndicatorView
+import GoogleMobileAds
 
 //import CircleProgressBar
 
@@ -45,7 +46,9 @@ class CameraViewController: UIViewController {
     @IBOutlet var titleLabel:UILabel!
     
     @IBOutlet weak var segmentedControl : Segmentio!
-    
+    @IBOutlet weak var  bannerView: GADBannerView!
+
+    @IBOutlet weak var  bannerHeight:NSLayoutConstraint!
     var navi:UINavigationController!
     var  type:Int!
     
@@ -185,6 +188,32 @@ class CameraViewController: UIViewController {
         self.animationScaleEffect(view: perform, animationTime: 0.7)
     }
  */
+    func setBannerView(){
+        let bAD:Bool = UserDefaults.standard.bool(forKey: "isADPurchased")
+     
+        let  appDelegate:AppDelegate = UIApplication.shared.delegate as! AppDelegate
+        
+        if( bAD == false && appDelegate.isSimulator == false )
+        {
+            
+            let  appDelegate:AppDelegate = UIApplication.shared.delegate as! AppDelegate
+            bannerView.adUnitID = "ca-app-pub-7915959670508279/9678938261"
+
+            bannerView.rootViewController = self
+            let request = GADRequest()
+            //  request.testDevices = @[ @"e65885a6f48dfc84c9ae2de2872759fd" ];
+            bannerView.load(request)
+
+        }
+        else
+        {
+           
+            bannerHeight.constant = 0
+        }
+    }
+    override func viewWillAppear(_ animated: Bool) {
+       // setBannerView()
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
 

@@ -778,6 +778,13 @@ class HomeViewController: UIViewController, UICollectionViewDelegate,UICollectio
              */
             
         }
+        else
+        {
+//            bannerView = GADBannerView(adSize: GADAdSizeBanner)
+//
+//            addBannerViewToView(bannerView)
+       
+        }
         if(JunSoftUtil.shared.isUpdate == true)
         {
             JunSoftUtil.shared.isUpdate = false
@@ -831,14 +838,8 @@ class HomeViewController: UIViewController, UICollectionViewDelegate,UICollectio
         {
             
             let  appDelegate:AppDelegate = UIApplication.shared.delegate as! AppDelegate
-            if(appDelegate.isServiceAD == false)
-            {
-                bannerView.adUnitID = "ca-app-pub-3940256099942544/2934735716"
-            }
-            else
-            {
-                bannerView.adUnitID = "ca-app-pub-7915959670508279/9678938261"
-            }
+            bannerView.adUnitID = "ca-app-pub-7915959670508279/9678938261"
+
             bannerView.rootViewController = self
             let request = GADRequest()
             //  request.testDevices = @[ @"e65885a6f48dfc84c9ae2de2872759fd" ];
@@ -847,22 +848,34 @@ class HomeViewController: UIViewController, UICollectionViewDelegate,UICollectio
         }
         else
         {
-            /*
-            if(bannerView != nil)
-            {
-                bannerView.removeFromSuperview()
-                bannerView = nil
-                
-            }
-            let user:UserDefaults = UserDefaults.standard
-            
-            let bAD:Bool = user.bool(forKey: "isADPurchased")
-            _rect.size.height = (_rect.size.height) + 66
-            collectionView?.frame = _rect!
-             */
+           
             bannerHeight.constant = 0
         }
  
+        
+        if( bAD == false && appDelegate.isSimulator == false)
+        {
+          
+            if(appDelegate.isServiceAD == false)
+            {
+                bannerView.adUnitID = "ca-app-pub-3940256099942544/2934735716"
+            }
+            else
+            {
+                bannerView.adUnitID = "ca-app-pub-7915959670508279/7299093024"
+            }
+            
+            bannerView.rootViewController = self
+            let request = GADRequest()
+            //  request.testDevices = @[ @"e65885a6f48dfc84c9ae2de2872759fd" ];
+            bannerView.load(request)
+
+        }
+        else
+        {
+            bannerHeight.constant = 0
+    
+        }
         
        // appDelegate.simulatePush()
         

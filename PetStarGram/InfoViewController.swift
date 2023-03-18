@@ -409,6 +409,33 @@ class InfoViewController: UIViewController ,UITableViewDelegate, UITableViewData
         self.present(alert, animated: true, completion: nil)
          
      }
+    func showAlertE(msg:String, title:String)  {
+             
+        let alert = UIAlertController(title: title,
+                                      message: msg,
+                                      preferredStyle: UIAlertController.Style.alert)
+
+
+        let okAction = UIAlertAction(title: "OK", style: .default, handler: { [ self] (action) -> Void in
+            
+
+        deleteAccount()
+
+         self.navigationController?.popViewController(animated: true)
+
+              })
+        let cancelAction = UIAlertAction(title: "Cancel", style: .default, handler: { [ self] (action) -> Void in
+               
+                 })
+
+        //okAction.isEnabled = false
+
+        alert.addAction(okAction)
+        alert.addAction(cancelAction)
+
+        self.present(alert, animated: true, completion: nil)
+         
+     }
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath)
     {
      //   self.chat = chats[indexPath.row]
