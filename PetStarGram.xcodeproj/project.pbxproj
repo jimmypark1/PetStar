@@ -3,10 +3,12 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 51;
+	objectVersion = 54;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		111C9E672DA3A464003157AA /* AdMobOpenAdManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 111C9E662DA3A464003157AA /* AdMobOpenAdManager.swift */; };
+		1196A21F2D9CD28C007B37C4 /* SubscribeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1196A21E2D9CD28C007B37C4 /* SubscribeViewController.swift */; };
 		1E0C8913213788A100BAF6C1 /* BlockUserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E0C8912213788A100BAF6C1 /* BlockUserViewController.swift */; };
 		1E0C891521378AA600BAF6C1 /* BlockCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E0C891421378AA600BAF6C1 /* BlockCell.swift */; };
 		1E177E34212104AF0070F161 /* StoreViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E177E33212104AF0070F161 /* StoreViewController.swift */; };
@@ -102,6 +104,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		111C9E662DA3A464003157AA /* AdMobOpenAdManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdMobOpenAdManager.swift; sourceTree = "<group>"; };
+		1196A21E2D9CD28C007B37C4 /* SubscribeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubscribeViewController.swift; sourceTree = "<group>"; };
 		1E0C8912213788A100BAF6C1 /* BlockUserViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlockUserViewController.swift; sourceTree = "<group>"; };
 		1E0C891421378AA600BAF6C1 /* BlockCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlockCell.swift; sourceTree = "<group>"; };
 		1E177E33212104AF0070F161 /* StoreViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreViewController.swift; sourceTree = "<group>"; };
@@ -294,6 +298,8 @@
 				1E6C7C1120EC9185004AC439 /* FeedCell.swift */,
 				1E3DEC0A20F46A2F000C16DD /* AuthViewController.swift */,
 				1E62B92E20FE9BE9008A59A6 /* FavoriteViewController.swift */,
+				111C9E662DA3A464003157AA /* AdMobOpenAdManager.swift */,
+				1196A21E2D9CD28C007B37C4 /* SubscribeViewController.swift */,
 				1E6AE0B520FF55170009E3AF /* FindFriendsCell.swift */,
 				1E6AE0B620FF55170009E3AF /* FindFriendsCell.xib */,
 				1E38F69F20F722DF00BED137 /* FindFriendViewController.swift */,
@@ -556,12 +562,14 @@
 				1E5462EF212CC041006872FC /* FilterShowViewController.swift in Sources */,
 				1E50A1AF21536703000D4116 /* LikeListViewController.swift in Sources */,
 				1EFFAF5420FD7559005A2583 /* LoginViewController.swift in Sources */,
+				1196A21F2D9CD28C007B37C4 /* SubscribeViewController.swift in Sources */,
 				1E62B93120FEFF75008A59A6 /* DateExtension.swift in Sources */,
 				1E38F6B620F867CC00BED137 /* HomeViewController.swift in Sources */,
 				1E3DEC0120F34037000C16DD /* CropFilter.m in Sources */,
 				1E3DEBF020F310D4000C16DD /* FilterData.swift in Sources */,
 				1E35153221004D3600ACD033 /* ChatListViewController.swift in Sources */,
 				1E38F69820F6D15A00BED137 /* JUser.swift in Sources */,
+				111C9E672DA3A464003157AA /* AdMobOpenAdManager.swift in Sources */,
 				1E62B92220FD8DBB008A59A6 /* ExampleTipsContentView.swift in Sources */,
 				1E3DEC0B20F46A2F000C16DD /* AuthViewController.swift in Sources */,
 				1E38F69E20F6D47900BED137 /* Storyboard+Utility.swift in Sources */,
@@ -771,10 +779,9 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = PetStarGram/PetStarGram.entitlements;
-				CODE_SIGN_IDENTITY = "Apple Development";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
+				CODE_SIGN_IDENTITY = "iPhone Distribution: JunSoft Mobile Inc. (V48RJ83RM5)";
 				CODE_SIGN_STYLE = Manual;
-				CURRENT_PROJECT_VERSION = 230318;
+				CURRENT_PROJECT_VERSION = 2504071;
 				DEVELOPMENT_TEAM = "";
 				"DEVELOPMENT_TEAM[sdk=iphoneos*]" = V48RJ83RM5;
 				ENABLE_BITCODE = YES;
@@ -785,12 +792,13 @@
 					"$(PROJECT_DIR)/PetStarGram/Content",
 				);
 				INFOPLIST_FILE = PetStarGram/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.social-networking";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.35;
+				MARKETING_VERSION = 1.37;
 				OTHER_LDFLAGS = (
 					"$(inherited)",
 					"-ObjC",
@@ -925,10 +933,9 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = PetStarGram/PetStarGram.entitlements;
-				CODE_SIGN_IDENTITY = "Apple Development";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
+				CODE_SIGN_IDENTITY = "iPhone Distribution: JunSoft Mobile Inc. (V48RJ83RM5)";
 				CODE_SIGN_STYLE = Manual;
-				CURRENT_PROJECT_VERSION = 230318;
+				CURRENT_PROJECT_VERSION = 2504071;
 				DEVELOPMENT_TEAM = "";
 				"DEVELOPMENT_TEAM[sdk=iphoneos*]" = V48RJ83RM5;
 				ENABLE_BITCODE = YES;
@@ -939,12 +946,13 @@
 					"$(PROJECT_DIR)/PetStarGram/Content",
 				);
 				INFOPLIST_FILE = PetStarGram/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.social-networking";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.35;
+				MARKETING_VERSION = 1.37;
 				OTHER_LDFLAGS = (
 					"$(inherited)",
 					"-ObjC",

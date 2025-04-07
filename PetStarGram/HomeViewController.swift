@@ -24,10 +24,10 @@ import GoogleMobileAds
 
 class HomeViewController: UIViewController, UICollectionViewDelegate,UICollectionViewDataSource,GADFullScreenContentDelegate{
     
-    var paginationHelper = MGPaginationHelper<JPost>(pageSize:10, serviceMethod: UserService.timeline)
-    var paginationHelper2 = MGPaginationHelper<JPost>(pageSize:100, serviceMethod: UserService.postsAll)
-    var paginationHelper3 = MGPaginationHelper<JPost>(pageSize:100, serviceMethod: UserService.recent)
-    var paginationHelper4 = MGPaginationHelper<JPost>(pageSize:100, serviceMethod: UserService.popular)
+    var paginationHelper = MGPaginationHelper<JPost>(pageSize:5, serviceMethod: UserService.timeline)
+    var paginationHelper2 = MGPaginationHelper<JPost>(pageSize:5, serviceMethod: UserService.postsAll)
+    var paginationHelper3 = MGPaginationHelper<JPost>(pageSize:5, serviceMethod: UserService.recent)
+    var paginationHelper4 = MGPaginationHelper<JPost>(pageSize:5, serviceMethod: UserService.popular)
 
     @IBOutlet  var feedView: UICollectionView!
     
@@ -687,8 +687,9 @@ class HomeViewController: UIViewController, UICollectionViewDelegate,UICollectio
     @IBAction func didTapStore(_ sender: UIBarButtonItem) {
         // self.view.window!.rootViewController?.dismiss(animated: false, completion: nil)
         // self.navigationController?.popViewController(animated: true)
-        performSegue(withIdentifier: "exec_store", sender: nil)
+       // performSegue(withIdentifier: "exec_store", sender: nil)
 
+        showStore()
     }
 
     func initSettings()
@@ -749,16 +750,16 @@ class HomeViewController: UIViewController, UICollectionViewDelegate,UICollectio
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         
         let vc = storyboard.instantiateViewController(withIdentifier: "StoreViewController") as! StoreViewController
-      
+//        let vc = StoreViewController()
       
       
         let transition = CATransition()
         transition.duration = 0.3
         transition.type = CATransitionType(string: "fade") as String
         //transition.subtype = .fromRight
-       // self.navigationController?.view.layer.add(transition, forKey: kCATransition)
-       // self.navigationController?.pushViewController(vc, animated: false)
-        self.present(vc, animated: true, completion: nil)
+        self.navigationController?.view.layer.add(transition, forKey: kCATransition)
+        self.navigationController?.pushViewController(vc, animated: false)
+//        self.present(vc, animated: true, completion: nil)
   
     }
     override func viewWillAppear(_ animated: Bool) {
@@ -768,6 +769,8 @@ class HomeViewController: UIViewController, UICollectionViewDelegate,UICollectio
         var bAD:Bool = user.bool(forKey: "isADPurchased")
         
        // bAD = true
+//        bannerHeight.constant = 0
+  
         if( bAD == true )
         {
             bannerHeight.constant = 0

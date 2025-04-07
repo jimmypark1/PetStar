@@ -1,6 +1,7 @@
 ${PODS_ROOT}/Target Support Files/Pods-PetStarGram/Pods-PetStarGram-frameworks.sh
 ${BUILT_PRODUCTS_DIR}/AFNetworking/AFNetworking.framework
 ${BUILT_PRODUCTS_DIR}/AppAuth/AppAuth.framework
+${BUILT_PRODUCTS_DIR}/DLRadioButton/DLRadioButton.framework
 ${BUILT_PRODUCTS_DIR}/EAIntroView/EAIntroView.framework
 ${BUILT_PRODUCTS_DIR}/EARestrictedScrollView/EARestrictedScrollView.framework
 ${BUILT_PRODUCTS_DIR}/ESTabBarController-swift/ESTabBarController_swift.framework
@@ -51,9 +52,12 @@ ${BUILT_PRODUCTS_DIR}/RSLoadingView/RSLoadingView.framework
 ${BUILT_PRODUCTS_DIR}/SDWebImage/SDWebImage.framework
 ${BUILT_PRODUCTS_DIR}/SSZipArchive/SSZipArchive.framework
 ${BUILT_PRODUCTS_DIR}/Segmentio/Segmentio.framework
+${BUILT_PRODUCTS_DIR}/SnapKit/SnapKit.framework
 ${BUILT_PRODUCTS_DIR}/SwiftKeychainWrapper/SwiftKeychainWrapper.framework
+${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework
 ${BUILT_PRODUCTS_DIR}/SwiftyStoreKit/SwiftyStoreKit.framework
 ${BUILT_PRODUCTS_DIR}/TRMosaicLayout/TRMosaicLayout.framework
+${BUILT_PRODUCTS_DIR}/TTGSnackbar/TTGSnackbar.framework
 ${BUILT_PRODUCTS_DIR}/ZWIntroductionViewController/ZWIntroductionViewController.framework
 ${BUILT_PRODUCTS_DIR}/leveldb-library/leveldb.framework
 ${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework

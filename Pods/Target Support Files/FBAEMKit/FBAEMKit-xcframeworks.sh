@@ -23,14 +23,14 @@ variant_for_slice()
   "FBAEMKit.xcframework/ios-arm64_i386_x86_64-simulator")
     echo "simulator"
     ;;
-  "FBAEMKit.xcframework/tvos-arm64_x86_64-simulator")
-    echo "simulator"
+  "FBAEMKit.xcframework/ios-arm64_x86_64-maccatalyst")
+    echo "maccatalyst"
     ;;
   "FBAEMKit.xcframework/tvos-arm64")
     echo ""
     ;;
-  "FBAEMKit.xcframework/ios-arm64_x86_64-maccatalyst")
-    echo "maccatalyst"
+  "FBAEMKit.xcframework/tvos-arm64_x86_64-simulator")
+    echo "simulator"
     ;;
   esac
 }
@@ -44,13 +44,13 @@ archs_for_slice()
   "FBAEMKit.xcframework/ios-arm64_i386_x86_64-simulator")
     echo "arm64 i386 x86_64"
     ;;
-  "FBAEMKit.xcframework/tvos-arm64_x86_64-simulator")
+  "FBAEMKit.xcframework/ios-arm64_x86_64-maccatalyst")
     echo "arm64 x86_64"
     ;;
   "FBAEMKit.xcframework/tvos-arm64")
     echo "arm64"
     ;;
-  "FBAEMKit.xcframework/ios-arm64_x86_64-maccatalyst")
+  "FBAEMKit.xcframework/tvos-arm64_x86_64-simulator")
     echo "arm64 x86_64"
     ;;
   esac

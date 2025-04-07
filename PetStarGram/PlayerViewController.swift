@@ -332,37 +332,38 @@ class PlayerViewController: UIViewController {
         
         // self.post.key
         PostService.views(for: self.post)
-        let user:UserDefaults = UserDefaults.standard
-        
-        var bAD:Bool = user.bool(forKey: "isADPurchased")
-       
-        if( bAD == false)
-        {
-            //bannerView = GADBannerView(adSize: kGADAdSizeBanner)
-            
-            //addBannerViewToView(bannerView)
-            
-            
-            let  appDelegate:AppDelegate = UIApplication.shared.delegate as! AppDelegate
-            if(appDelegate.isServiceAD == false)
-            {
-                bannerView.adUnitID = "ca-app-pub-3940256099942544/2934735716"
-            }
-            else
-            {
-                bannerView.adUnitID = "ca-app-pub-7915959670508279/1061396854"
-            }
-            bannerView.rootViewController = self
-            let request = GADRequest()
-            //  request.testDevices = @[ @"e65885a6f48dfc84c9ae2de2872759fd" ];
-            bannerView.load(request)
-            
-        }
-        else
-        {
-            bannerHeight.constant = 0
-        }
-        
+//        let user:UserDefaults = UserDefaults.standard
+//        
+//        var bAD:Bool = user.bool(forKey: "isADPurchased")
+//       
+//        if( bAD == false)
+//        {
+//            //bannerView = GADBannerView(adSize: kGADAdSizeBanner)
+//            
+//            //addBannerViewToView(bannerView)
+//            
+//            
+//            let  appDelegate:AppDelegate = UIApplication.shared.delegate as! AppDelegate
+//            if(appDelegate.isServiceAD == false)
+//            {
+//                bannerView.adUnitID = "ca-app-pub-3940256099942544/2934735716"
+//            }
+//            else
+//            {
+//                bannerView.adUnitID = "ca-app-pub-7915959670508279/1061396854"
+//            }
+//            bannerView.rootViewController = self
+//            let request = GADRequest()
+//            //  request.testDevices = @[ @"e65885a6f48dfc84c9ae2de2872759fd" ];
+//            bannerView.load(request)
+//            
+//        }
+//        else
+//        {
+//            bannerHeight.constant = 0
+//        }
+        bannerHeight.constant = 0
+ 
         
         
      

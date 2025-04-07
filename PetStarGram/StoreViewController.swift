@@ -8,6 +8,7 @@
 
 import UIKit
 import SwiftyStoreKit
+import SnapKit
 
 
 class StoreViewController: UIViewController,UICollectionViewDataSource, UICollectionViewDelegate {
@@ -120,17 +121,65 @@ class StoreViewController: UIViewController,UICollectionViewDataSource, UICollec
         }
         
     }
-   
+    func setupBackButton() {
+        // 백 버튼을 설정 (Chevron 아이콘, 텍스트 없음)
+        let backButton = UIBarButtonItem(
+            image: UIImage(systemName: "xmark"), // 시스템 Chevron 아이콘 사용
+            style: .plain,
+            target: self,
+            action: #selector(backButtonTapped)
+        )
+        backButton.tintColor = .black // 아이콘 색상을 검정색으로 설정
+        
+        // 백 버튼 텍스트 제거
+        self.navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: nil, action: nil)
+        self.navigationItem.leftBarButtonItem = backButton
+    }
+    func setupRestoreButton() {
+        // 백 버튼을 설정 (Chevron 아이콘, 텍스트 없음)
+        let backButton = UIBarButtonItem(
+            image: UIImage(systemName: "gobackward"), // 시스템 Chevron 아이콘 사용
+            style: .plain,
+            target: self,
+            action: #selector(restoreButtonTapped)
+        )
+        backButton.tintColor = .black // 아이콘 색상을 검정색으로 설정
+        
+        // 백 버튼 텍스트 제거
+        self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: nil, action: nil)
+        self.navigationItem.rightBarButtonItem = backButton
+    }
+    @objc func backButtonTapped(){
+        self.navigationController?.popViewController(animated: false)
+    }
+    @objc func restoreButtonTapped(){
+//        self.navigationController?.popViewController(animated: false)
+        restore()
+    }
+    func setupUI(){
+        let imgView = UIImageView(frame: .zero)
+        imgView.image = UIImage(named: "anim4")
+        self.view.addSubview(imgView)
+        imgView.snp.makeConstraints { make in
+            make.top.equalTo(self.view.safeAreaLayoutGuide)
+            make.leading.trailing.equalToSuperview()
+            make.bottom.equalToSuperview()
+        }
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.view.backgroundColor = .white
+        self.title = "Pet Star VIP"
+        self.navigationController?.navigationBar.tintColor = .black
 
-        // Do any additional setup after loading the view.
+//        setupUI()
         filters = NSMutableArray()
-        
+        setupBackButton()
+        setupRestoreButton()
         getFiterPrice()
         getWaterPrice()
         getADPrice()
-        initTopView()
+//        initTopView()
         makeBasic()
         makeVintage()
         makeHaze()
@@ -470,7 +519,11 @@ class StoreViewController: UIViewController,UICollectionViewDataSource, UICollec
     func collectionView(_ collectionView: UICollectionView,
                         numberOfItemsInSection section: Int) -> Int
     {
-        return filters.count
+        if filters != nil{
+            return filters.count
+        }
+        return 0
+      
         //return self.itemArray.count
     }
     func collectionView(_ collectionView: UICollectionView,

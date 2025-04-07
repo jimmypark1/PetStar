@@ -20,14 +20,14 @@ variant_for_slice()
   "FBSDKCoreKit_Basics.xcframework/ios-arm64_armv7")
     echo ""
     ;;
-  "FBSDKCoreKit_Basics.xcframework/tvos-arm64")
-    echo ""
-    ;;
   "FBSDKCoreKit_Basics.xcframework/ios-arm64_i386_x86_64-simulator")
     echo "simulator"
     ;;
   "FBSDKCoreKit_Basics.xcframework/ios-arm64_x86_64-maccatalyst")
     echo "maccatalyst"
+    ;;
+  "FBSDKCoreKit_Basics.xcframework/tvos-arm64")
+    echo ""
     ;;
   "FBSDKCoreKit_Basics.xcframework/tvos-arm64_x86_64-simulator")
     echo "simulator"
@@ -41,14 +41,14 @@ archs_for_slice()
   "FBSDKCoreKit_Basics.xcframework/ios-arm64_armv7")
     echo "arm64 armv7"
     ;;
-  "FBSDKCoreKit_Basics.xcframework/tvos-arm64")
-    echo "arm64"
-    ;;
   "FBSDKCoreKit_Basics.xcframework/ios-arm64_i386_x86_64-simulator")
     echo "arm64 i386 x86_64"
     ;;
   "FBSDKCoreKit_Basics.xcframework/ios-arm64_x86_64-maccatalyst")
     echo "arm64 x86_64"
+    ;;
+  "FBSDKCoreKit_Basics.xcframework/tvos-arm64")
+    echo "arm64"
     ;;
   "FBSDKCoreKit_Basics.xcframework/tvos-arm64_x86_64-simulator")
     echo "arm64 x86_64"

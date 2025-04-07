@@ -18,7 +18,7 @@ echo "mkdir -p ${CONFIGURATION_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}"
 mkdir -p "${CONFIGURATION_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}"
 
 COCOAPODS_PARALLEL_CODE_SIGN="${COCOAPODS_PARALLEL_CODE_SIGN:-false}"
-SWIFT_STDLIB_PATH="${DT_TOOLCHAIN_DIR}/usr/lib/swift/${PLATFORM_NAME}"
+SWIFT_STDLIB_PATH="${TOOLCHAIN_DIR}/usr/lib/swift/${PLATFORM_NAME}"
 BCSYMBOLMAP_DIR="BCSymbolMaps"
 
 
@@ -41,7 +41,7 @@ install_framework()
 
   if [ -L "${source}" ]; then
     echo "Symlinked..."
-    source="$(readlink "${source}")"
+    source="$(readlink -f "${source}")"
   fi
 
   if [ -d "${source}/${BCSYMBOLMAP_DIR}" ]; then
@@ -178,6 +178,7 @@ code_sign_if_enabled() {
 if [[ "$CONFIGURATION" == "Debug" ]]; then
   install_framework "${BUILT_PRODUCTS_DIR}/AFNetworking/AFNetworking.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/AppAuth/AppAuth.framework"
+  install_framework "${BUILT_PRODUCTS_DIR}/DLRadioButton/DLRadioButton.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/EAIntroView/EAIntroView.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/EARestrictedScrollView/EARestrictedScrollView.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/ESTabBarController-swift/ESTabBarController_swift.framework"
@@ -228,9 +229,12 @@ if [[ "$CONFIGURATION" == "Debug" ]]; then
   install_framework "${BUILT_PRODUCTS_DIR}/SDWebImage/SDWebImage.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/SSZipArchive/SSZipArchive.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/Segmentio/Segmentio.framework"
+  install_framework "${BUILT_PRODUCTS_DIR}/SnapKit/SnapKit.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/SwiftKeychainWrapper/SwiftKeychainWrapper.framework"
+  install_framework "${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/SwiftyStoreKit/SwiftyStoreKit.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/TRMosaicLayout/TRMosaicLayout.framework"
+  install_framework "${BUILT_PRODUCTS_DIR}/TTGSnackbar/TTGSnackbar.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/ZWIntroductionViewController/ZWIntroductionViewController.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/leveldb-library/leveldb.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework"
@@ -244,6 +248,7 @@ fi
 if [[ "$CONFIGURATION" == "Release" ]]; then
   install_framework "${BUILT_PRODUCTS_DIR}/AFNetworking/AFNetworking.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/AppAuth/AppAuth.framework"
+  install_framework "${BUILT_PRODUCTS_DIR}/DLRadioButton/DLRadioButton.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/EAIntroView/EAIntroView.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/EARestrictedScrollView/EARestrictedScrollView.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/ESTabBarController-swift/ESTabBarController_swift.framework"
@@ -294,9 +299,12 @@ if [[ "$CONFIGURATION" == "Release" ]]; then
   install_framework "${BUILT_PRODUCTS_DIR}/SDWebImage/SDWebImage.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/SSZipArchive/SSZipArchive.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/Segmentio/Segmentio.framework"
+  install_framework "${BUILT_PRODUCTS_DIR}/SnapKit/SnapKit.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/SwiftKeychainWrapper/SwiftKeychainWrapper.framework"
+  install_framework "${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/SwiftyStoreKit/SwiftyStoreKit.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/TRMosaicLayout/TRMosaicLayout.framework"
+  install_framework "${BUILT_PRODUCTS_DIR}/TTGSnackbar/TTGSnackbar.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/ZWIntroductionViewController/ZWIntroductionViewController.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/leveldb-library/leveldb.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework"

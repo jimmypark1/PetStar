@@ -20,6 +20,7 @@ PODS:
   - AppAuth/Core (1.6.0)
   - AppAuth/ExternalUserAgent (1.6.0):
     - AppAuth/Core
+  - DLRadioButton (1.4.12)
   - EAIntroView (2.13.0):
     - EARestrictedScrollView (~> 1.1.0)
   - EARestrictedScrollView (1.1.0)
@@ -861,14 +862,18 @@ PODS:
     - SDWebImage/Core (= 4.4.8)
   - SDWebImage/Core (4.4.8)
   - Segmentio (3.3)
+  - SnapKit (5.7.1)
   - SSZipArchive (2.4.3)
   - SwiftKeychainWrapper (4.0.1)
+  - SwiftyJSON (5.0.2)
   - SwiftyStoreKit (0.16.1)
   - TRMosaicLayout (1.0.0)
+  - TTGSnackbar (1.12.0)
   - ZWIntroductionViewController (0.3.7)
 
 DEPENDENCIES:
   - AFNetworking (~> 3.0)
+  - DLRadioButton
   - EAIntroView
   - ESTabBarController-swift
   - FBSDKCoreKit
@@ -902,16 +907,20 @@ DEPENDENCIES:
   - RSLoadingView
   - SDWebImage (~> 4.0)
   - Segmentio (~> 3.0)
+  - SnapKit
   - SSZipArchive
   - SwiftKeychainWrapper
+  - SwiftyJSON
   - SwiftyStoreKit
   - TRMosaicLayout
+  - TTGSnackbar
   - ZWIntroductionViewController
 
 SPEC REPOS:
   trunk:
     - AFNetworking
     - AppAuth
+    - DLRadioButton
     - EAIntroView
     - EARestrictedScrollView
     - ESTabBarController-swift
@@ -974,15 +983,19 @@ SPEC REPOS:
     - RSLoadingView
     - SDWebImage
     - Segmentio
+    - SnapKit
     - SSZipArchive
     - SwiftKeychainWrapper
+    - SwiftyJSON
     - SwiftyStoreKit
     - TRMosaicLayout
+    - TTGSnackbar
     - ZWIntroductionViewController
 
 SPEC CHECKSUMS:
-  AFNetworking: b6f891fdfaed196b46c7a83cf209e09697b94057
+  AFNetworking: cb604b1c2bded0871f5f61f5d53653739e841d6b
   AppAuth: 8fca6b5563a5baef2c04bee27538025e4ceb2add
+  DLRadioButton: d7c4e225ed0e8013cef7be61455230c7557ad7c1
   EAIntroView: 9adedfc6b5c3fd3ebe19766da01dae573e6ce053
   EARestrictedScrollView: b0c2a3f92fb2610bb44d71c5e4893777c89e45ef
   ESTabBarController-swift: 05593a6ad64700b03c0eb60ff625916370aa4136
@@ -1045,12 +1058,15 @@ SPEC CHECKSUMS:
   RSLoadingView: c7749afdd455229643e8f34277d0695973a15b1a
   SDWebImage: 783af2c3fa36291a250030c4752ee370a9a51d13
   Segmentio: 4ff49aa4f4c916998c0d886c549ce62ca9eae251
+  SnapKit: d612e99e678a2d3b95bf60b0705ed0a35c03484a
   SSZipArchive: fe6a26b2a54d5a0890f2567b5cc6de5caa600aef
   SwiftKeychainWrapper: 807ba1d63c33a7d0613288512399cd1eda1e470c
+  SwiftyJSON: f5b1bf1cd8dd53cd25887ac0eabcfd92301c6a5a
   SwiftyStoreKit: 6b9c08810269f030586dac1fae8e75871a82e84a
   TRMosaicLayout: 1875505c48dd2877afd69a8bea7b4c1c63afa5b5
+  TTGSnackbar: 8e7650b9b1f5f44e40228473455986f5c12213c7
   ZWIntroductionViewController: 8e2e32ada6aa60324c34417d22f428b59908c928
 
-PODFILE CHECKSUM: 545e3ad7a20795eee972d75c7d2c7822d1c13e16
+PODFILE CHECKSUM: 5073c36ae5f91112b50dcb093759b9697aeb66b5
 
-COCOAPODS: 1.11.3
+COCOAPODS: 1.16.2
