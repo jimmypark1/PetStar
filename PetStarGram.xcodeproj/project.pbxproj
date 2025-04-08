@@ -426,7 +426,7 @@
 				1E6C7BE420E985E6004AC439 /* Frameworks */,
 				1E6C7BE520E985E6004AC439 /* Resources */,
 				EA1A88B75F57A8FB1160B534 /* [CP] Embed Pods Frameworks */,
-				1E25683921191F8B0084C3ED /* ShellScript */,
+				11EB73612DA4B4710095E190 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -498,18 +498,22 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		1E25683921191F8B0084C3ED /* ShellScript */ = {
+		11EB73612DA4B4710095E190 /* ShellScript */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
+			inputFileListPaths = (
+			);
 			inputPaths = (
+			);
+			outputFileListPaths = (
 			);
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "./Fabric.framework/run ed2b17f6178d3d1d6b3700c94bcb93f46aef4a07 e490ab7b90087e757b5056aea7ba3cafb2fb38a97c0d7c73bd3c1ace4060f3be";
+			shellScript = "find \"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}\" -name '*.framework' -type d | while read -r framework; do\n    framework_name=$(basename \"$framework\" .framework)\n    binary_path=\"$framework/$framework_name\"\n    if xcrun otool -l \"$binary_path\" | grep -q __LLVM; then\n        xcrun bitcode_strip -r \"$binary_path\" -o \"$binary_path\"\n    fi\ndone\n";
 		};
 		35A03230E2FDF7E23A9DAF3D /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -781,10 +785,10 @@
 				CODE_SIGN_ENTITLEMENTS = PetStarGram/PetStarGram.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Distribution: JunSoft Mobile Inc. (V48RJ83RM5)";
 				CODE_SIGN_STYLE = Manual;
-				CURRENT_PROJECT_VERSION = 2504071;
+				CURRENT_PROJECT_VERSION = 2504081;
 				DEVELOPMENT_TEAM = "";
 				"DEVELOPMENT_TEAM[sdk=iphoneos*]" = V48RJ83RM5;
-				ENABLE_BITCODE = YES;
+				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/PetStarGram/kakao",
@@ -935,10 +939,10 @@
 				CODE_SIGN_ENTITLEMENTS = PetStarGram/PetStarGram.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Distribution: JunSoft Mobile Inc. (V48RJ83RM5)";
 				CODE_SIGN_STYLE = Manual;
-				CURRENT_PROJECT_VERSION = 2504071;
+				CURRENT_PROJECT_VERSION = 2504081;
 				DEVELOPMENT_TEAM = "";
 				"DEVELOPMENT_TEAM[sdk=iphoneos*]" = V48RJ83RM5;
-				ENABLE_BITCODE = YES;
+				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/PetStarGram/kakao",
