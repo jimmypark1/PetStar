@@ -785,7 +785,7 @@
 				CODE_SIGN_ENTITLEMENTS = PetStarGram/PetStarGram.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Distribution: JunSoft Mobile Inc. (V48RJ83RM5)";
 				CODE_SIGN_STYLE = Manual;
-				CURRENT_PROJECT_VERSION = 2504081;
+				CURRENT_PROJECT_VERSION = 2504082;
 				DEVELOPMENT_TEAM = "";
 				"DEVELOPMENT_TEAM[sdk=iphoneos*]" = V48RJ83RM5;
 				ENABLE_BITCODE = NO;
@@ -939,7 +939,7 @@
 				CODE_SIGN_ENTITLEMENTS = PetStarGram/PetStarGram.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Distribution: JunSoft Mobile Inc. (V48RJ83RM5)";
 				CODE_SIGN_STYLE = Manual;
-				CURRENT_PROJECT_VERSION = 2504081;
+				CURRENT_PROJECT_VERSION = 2504082;
 				DEVELOPMENT_TEAM = "";
 				"DEVELOPMENT_TEAM[sdk=iphoneos*]" = V48RJ83RM5;
 				ENABLE_BITCODE = NO;

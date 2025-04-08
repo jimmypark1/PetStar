@@ -562,6 +562,28 @@ class AppDelegate: UIResponder, UIApplicationDelegate,UITabBarControllerDelegate
     }
     func applicationDidBecomeActive(application: UIApplication!) {
        // FBSDKAppEvents.activateApp()
+        var topViewController = UIApplication.shared.keyWindow?.rootViewController
+        
+        let isFirstLaunch = !UserDefaults.standard.bool(forKey: "hasLaunchedBefore")
+
+        let bBuy = UserDefaults.standard.bool(forKey: "BUY_VIP")
+     
+        if !isFirstLaunch{
+            
+            if bBuy == false{
+                if topViewController != nil{
+                    while ((topViewController?.presentedViewController) != nil) {
+                        topViewController = topViewController?.presentedViewController
+                    }
+                    DispatchQueue.main.async {
+                        AdMobOpenAdManager.shared.showAdIfAvailable(viewController: topViewController!)
+
+                    }
+           
+                }
+            }
+        }
+       
     }
     
     func application(_ app: UIApplication, open url: URL, options: [UIApplicationOpenURLOptionsKey : Any] = [:]) -> Bool

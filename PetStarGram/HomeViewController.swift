@@ -763,6 +763,11 @@ class HomeViewController: UIViewController, UICollectionViewDelegate,UICollectio
   
     }
     override func viewWillAppear(_ animated: Bool) {
+        
+//        UserDefaults.standard.set(true, forKey: "hasLaunchedBefore")
+
+      
+        
         initCollectionView()
         let user:UserDefaults = UserDefaults.standard
         
@@ -810,7 +815,15 @@ class HomeViewController: UIViewController, UICollectionViewDelegate,UICollectio
             }
             
         }
-       
+        let bFirst = UserDefaults.standard.bool(forKey: "hasLaunchedBefore")
+        if bFirst == false{
+            UserDefaults.standard.set(true, forKey: "hasLaunchedBefore")
+            UserDefaults.standard.synchronize()
+            DispatchQueue.main.async {
+                AdMobOpenAdManager.shared.showAdIfAvailable(viewController: (UIApplication.shared.keyWindow?.rootViewController)!)
+
+            }
+        }
     }
     
     override func viewDidAppear(_ animated: Bool) {
